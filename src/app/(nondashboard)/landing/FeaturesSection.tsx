@@ -27,18 +27,18 @@ const FeaturesSection = () => {
       variants={containerVariants}
       className="py-24 px-6 sm:px-8 lg:px-12 xl:px-16 bg-white"
     >
-        <div className="max-w-4xl xl:max-2-6xl mx-auto">
+        <div className="max-w-4xl xl:max-w-6xl mx-auto">
         <motion.h2
             variants={itemVariants}
-            className="text-3xl font-bold text-center mb-12 w-full sm:w-2/3 mx-auto"
+            className="text-3xl font-bold text-center text-black mb-12 w-full sm:w-2/3 mx-auto"
         >
             Quickly find the home you want using our effective search filters!
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 text-black">
             {[0,1,2].map((index) => (
                 <motion.div key={index} variants={itemVariants}>
                    <FeatureCard
-                        imageSrc={'/landing-search${3 - index}.png'}
+                        imageSrc={'/landing-search' + (index + 1) + '.png'}
                         title={
                             ["Trustworthy and Verified Listings",
                                 "Browse Rental Listings with Ease",
@@ -46,11 +46,13 @@ const FeaturesSection = () => {
                             ][index]
                         }
                         description={
-                            ["Trustworthy and Verified Listings",
-                                "Browse Rental Listings with Ease",
-                                "Simplfy Your Rental Search with Advanced"
+                            ["Discover the best rental options with user reviews and ratings.",
+                                "Get access to user reviews and ratings for a better understanding of rental options.",
+                                "Find trustworthy and verified rental listing to ensure a hassle-free experience."
                             ][index]
                         }
+                        linkText={["Explore", "Search", "Discover"][index]}
+                        linkHref={["/explore", "/search", "/discover"][index]}
                     />
                 </motion.div>
             ))}
