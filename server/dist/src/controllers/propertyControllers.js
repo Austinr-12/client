@@ -178,7 +178,7 @@ const createProperty = (req, res) => __awaiter(void 0, void 0, void 0, function*
         }).toString()}`;
         const geocodingResponse = yield axios_1.default.get(geocodingUrl, {
             headers: {
-                "User-Agent": "RealEstateApp (austin.ramirez1@outloook.com",
+                "User-Agent": "RealEstateApp (justsomedummyemail@gmail.com",
             },
         });
         const [longitude, latitude] = ((_a = geocodingResponse.data[0]) === null || _a === void 0 ? void 0 : _a.lon) && ((_b = geocodingResponse.data[0]) === null || _b === void 0 ? void 0 : _b.lat)

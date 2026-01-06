@@ -18,7 +18,7 @@ const authMiddleware = (allowedRoles) => {
             const userRole = decoded["custom:role"] || "";
             req.user = {
                 id: decoded.sub,
-                role: userRole
+                role: userRole,
             };
             const hasAccess = allowedRoles.includes(userRole.toLowerCase());
             if (!hasAccess) {
@@ -28,7 +28,7 @@ const authMiddleware = (allowedRoles) => {
         }
         catch (err) {
             console.error("Failed to decode token:", err);
-            res.status(400).json({ message: "Invalid Token" });
+            res.status(400).json({ message: "Invalid token" });
             return;
         }
         next();
